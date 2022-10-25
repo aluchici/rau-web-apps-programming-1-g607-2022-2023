@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 0.1fr 0.2fr 1fr;
+    border: 1px solid green;
+}
+
+.display-columns-border {
+    border: 1px dashed red;
+    
+}
+
+.place-on-row-1 {
+    grid-row-start: 1;
+}
+
+.place-on-row-2 {
+    grid-row-start: 2;
+}
+
+.place-on-row-3 {
+    grid-row-start: 3;
+}
+
+.place-on-column-3 {
+    grid-column-start: 3;
+}
