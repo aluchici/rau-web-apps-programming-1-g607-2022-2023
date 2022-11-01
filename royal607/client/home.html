@@ -2,25 +2,24 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <!-- Container pentru toate elementele de pe pagina -->
         <div class="container">
             <!-- Logo -->
             <div class="place-on-row-1">
-                <img>
+                <img id="logo-image" class="logo" src="D:\LUCHICI\Source\rau-web-apps-programming-1-g607-2022-2023\royal607\client\assets\97654965-abstract-virtual-coin-object-on-a-white-background.webp">
             </div>
 
-            <div class="place-on-row-1 place-on-column-3">
-                <span>Virtual Coin</span>
-                <img>
+            <div id="top-right-nav" class="place-on-row-1 place-on-column-3">
+                <span name="virtual-coin-span">Virtual Coin</span>
+                <i class="fa fa-user-circle-o account" aria-hidden="true"></i>
             </div>
+
             <!-- Coloana din stanga, logo, top players section -->
             <div class="display-columns-border place-on-row-3">
-                <ol>
-                    <li>Top player 1</li>
-                    <li>Top player 2</li>
-                    <li>Top player 3</li>
+                <ol id="top-players-list">
                 </ol>
             </div>
 
@@ -38,5 +37,8 @@
                 </ul>
             </div>
         </div>
+
+        <!-- JavaScript code -->
+        <script src="js/home.js"></script>
     </body>
 </html>
