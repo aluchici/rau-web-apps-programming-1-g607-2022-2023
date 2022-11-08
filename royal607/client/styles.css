@@ -1,7 +1,7 @@
 .container {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 0.1fr 0.2fr 1fr;
+    grid-template-columns: 2fr 5fr 1fr;
+    grid-template-rows: 0.1fr 0.2fr 1fr 1fr;
     border: 1px solid green;
 }
 
@@ -22,8 +22,17 @@
     grid-row-start: 3;
 }
 
+.place-on-row-3-4 {
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
 .place-on-column-3 {
     grid-column-start: 3;
+}
+
+.place-on-row-4 {
+    grid-row-start: 4;
 }
 
 .logo {
@@ -38,4 +47,31 @@
     font-size: 16px;
     font-weight: 900;
     color: blue;
+}
+
+.friends-list-item {
+    border: 1px solid yellowgreen;
+    margin: 3px;
+}
+
+.friends-list-logo {
+    width: 25px;
+    height: 25px;
+}
+
+.friends-list-name {
+    font-weight: 600;
+}
+
+.friends-list-status {
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.friends-list-status-on {
+    color: green;
+}
+
+.friends-list-status-off {
+    color: red;
 }
