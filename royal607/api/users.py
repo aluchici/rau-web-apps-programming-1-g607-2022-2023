@@ -1,3 +1,4 @@
+import datetime
 import json
 
 
@@ -10,6 +11,9 @@ class User:
         self.email = email
         self.password = password
         self.second_password = second_password
+        self.created_at = datetime.datetime.utcnow()
+        self.created_at = self.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        self.updated_at = self.created_at
 
     def validate_email(self):
         email = self.email.lower()
@@ -30,7 +34,6 @@ class User:
         return email
 
     def validate_password(self):
-        # eliminate spaces
         present_spaces = self.password.find(" ")
         if present_spaces > -1:
             raise ValueError("Invalid password. Password contains spaces.")
@@ -73,7 +76,9 @@ class User:
             "name": self.name,
             "email": self.email,
             "password": self.password,
-            "second_password": self.second_password
+            "second_password": self.second_password,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at
         }
         return user_dict
 
@@ -89,11 +94,39 @@ class User:
         email = user_dict.get("email")
         password = user_dict.get("password")
         second_password = user_dict.get("second_password")
+        created_at = user_dict.get("created_at")
+        updated_at = user_dict.get("updated_at")
+
         obj = cls(id=id, name=name, email=email, password=password, second_password=second_password)
+        obj.created_at = created_at
+        obj.updated_at = updated_at
+
         return obj
 
     @classmethod
     def from_list(cls, user_list):
-        obj = cls(id=user_list[0], name=user_list[1], email=user_list[2],
-                  password=user_list[3], second_password=user_list[4])
-        return obj
+        if user_list is None or (len(user_list) != 3 and len(user_list) != 7):
+            raise ValueError("Invalid user details provided.")
+
+        if len(user_list) == 3:
+            id = user_list[0]
+            email = user_list[1]
+            password = user_list[2]
+
+            obj = cls(id=id, email=email, password=password)
+            return obj
+
+        if len(user_list) == 7:
+            id = user_list[0]
+            name = user_list[1]
+            email = user_list[2]
+            password = user_list[3]
+            second_password = user_list[4]
+            created_at = user_list[5]
+            updated_at = user_list[6]
+
+            obj = cls(id=id, name=name, email=email, password=password, second_password=second_password)
+            obj.created_at = created_at
+            obj.updated_at = updated_at
+            return obj
+
