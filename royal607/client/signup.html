@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body class="container">
+
+    <div class="signup-form">
+        <div class="input-spacing">
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder="Enter your full name">
+        </div>
+
+        <div class="input-spacing">
+            <label for="email">Your Email</label>
+            <input id="email" type="email" placeholder="Enter your email address">
+        </div>
+
+        <div class="input-spacing">
+            <label for="password">Your Password</label>
+            <input id="password" type="password" placeholder="Enter your password">
+        </div>
+
+        <div class="input-spacing">
+            <label for="secondPassword">Retype Password</label>
+            <input id="secondPassword" type="password" placeholder="Retype your password">
+        </div>
+
+        <div class="input-spacing">
+            <button onclick="createAccount()">Create account</button>
+            <p>If you already have an account, please click <a href="signin.html">here</a> to sing in.</p>
+        </div>
+    </div>
+
+    <script src="js/signup.js"></script>
+</body>
+</html>

@@ -168,3 +168,21 @@ def delete_user_by_email(user_to_delete, connection_string):
         cursor.close()
         conn.close()
         raise e
+
+
+def get_user_by_id(user_id, connection_string):
+    query = f"SELECT * FROM users WHERE id = {user_id};"
+
+    conn = sqlite3.connect(connection_string)
+    cursor = conn.cursor()
+
+    try:
+        results = cursor.execute(query).fetchone()
+        user = User.from_list(results)
+        cursor.close()
+        conn.close()
+        return user
+    except Exception as e:
+        cursor.close()
+        conn.close()
+        raise e

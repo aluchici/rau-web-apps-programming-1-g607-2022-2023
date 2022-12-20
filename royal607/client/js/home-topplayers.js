@@ -58,7 +58,7 @@ function randomScore() {
     return score;
 }
 
-const PROFILE_IMAGE_DEFAULT = "D:\\LUCHICI\\Source\\rau-web-apps-programming-1-g607-2022-2023\\royal607\\client\\assets\\logo.webp"
+const PROFILE_IMAGE_DEFAULT = "/Users/luchicla/Work/RAU/rau-web-apps-programming-1-g607-2022-2023/royal607/client/assets/logo.webp"
 const TOP_PLAYERS = new TopPlayersList()
 const TOP_PLAYERS_HARDCODED = [
     new TopPlayer("SuperPlayer", PROFILE_IMAGE_DEFAULT, randomScore()),

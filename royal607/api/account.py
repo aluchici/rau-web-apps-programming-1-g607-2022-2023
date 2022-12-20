@@ -1,7 +1,7 @@
 import datetime
 
 from royal607.api.repository import insert_user, get_user_email_and_password, edit_user_details, delete_user_by_id, \
-    delete_user_by_email, get_all_users
+    delete_user_by_email, get_all_users, get_user_by_id
 from royal607.api.users import User
 
 
@@ -64,3 +64,8 @@ def delete_user(id=None, email=None, connection_string=None):
 def get_all(connection_string):
     users = get_all_users(connection_string)
     return users
+
+
+def get_user_details(user_id, connection_string):
+    user = get_user_by_id(user_id, connection_string)
+    return user
